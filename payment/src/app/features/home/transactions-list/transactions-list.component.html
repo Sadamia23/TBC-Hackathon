@@ -1,0 +1,15 @@
+<div class="transaction-list">
+  <div class="transaction-header">
+    <h4>ბოლო ტრანზაქციები</h4>
+  </div>
+
+  <div class="transaction-item" *ngFor="let transaction of transactions">
+    <div class="transaction-info">
+      <div class="date">{{ transaction.date }}</div>
+      <div class="description">{{ transaction.description }}</div>
+    </div>
+    <div class="amount" [class.negative]="transaction.amount < 0">
+      {{ transaction.amount | number : "1.2-2" }} GEL
+    </div>
+  </div>
+</div>
